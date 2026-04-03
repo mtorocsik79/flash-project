@@ -20,6 +20,16 @@
   </style>
 </head>
 <body>
-  <embed id="player" src="mario.swf" type="application/x-shockwave-flash" />
+  <div id="player"></div>
+
+  <script>
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.addEventListener("DOMContentLoaded", () => {
+      const ruffle = window.RufflePlayer.newest();
+      const player = ruffle.createPlayer();
+      document.getElementById("player").appendChild(player);
+      player.load("mario.swf");
+    });
+  </script>
 </body>
 </html>
